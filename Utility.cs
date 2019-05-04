@@ -39,5 +39,38 @@ namespace DataStructureProgram
                 return false;
             }
         }
+
+        public static bool StringChecker(string name)
+        {
+            try
+            {
+                name = name.Trim();
+                if (string.IsNullOrEmpty(name))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static bool ContainsCharacter(string personName)
+        {
+            char[] personNameArray = personName.ToCharArray();
+            for (int i = 0; i < personNameArray.Length; i++)
+            {
+                if (!char.IsLetterOrDigit(personNameArray[i]))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

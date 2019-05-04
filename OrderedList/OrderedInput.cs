@@ -46,6 +46,13 @@ namespace DataStructureProgram.OrderedList
                 }
 
                 int searchnumber = Convert.ToInt32(number);
+                Console.WriteLine("Entered NUmber" + searchnumber);
+                
+                if (singlyLinkedList.Search(number))
+                {
+                    Console.WriteLine("remove number from the list" + "\t" + number);
+                    singlyLinkedList.Delete(singlyLinkedList);
+                }             
             }
             catch (Exception ex)
             {

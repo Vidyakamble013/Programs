@@ -41,7 +41,7 @@ namespace DataStructureProgram.OrderedList
         }
 
         /// <summary>
-        ///next is instance of Node
+        ///Next is instance of Node
         /// </summary>
         public Node Next
         {
