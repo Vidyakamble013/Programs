@@ -25,6 +25,13 @@ namespace DataStructureProgram
                 Console.WriteLine("2. OrderedList ");
                 Console.WriteLine("3. Parentheses Balanced");
                 Console.WriteLine("4. Banking Transaction");
+                Console.WriteLine("5. Palindrome Checker");
+                Console.WriteLine("6. CalendarProgramUsing_Array");
+                Console.WriteLine("7. CalendarProgramUsing_Queue");
+                Console.WriteLine("8. CalendarProgramUsing_Stack");
+                Console.WriteLine("9. PrimeNumber Program");
+                Console.WriteLine("10. Anagram Number find prime Number Program");
+                Console.WriteLine("11. PrimeWithAnagramProgramUsingQueue");
                 Console.WriteLine("Enter your choice");
                 choice = int.Parse(Console.ReadLine());
 
@@ -43,6 +50,28 @@ namespace DataStructureProgram
                     case 4:
                         BankingOperation.BankCounter.Counter();
                         break;
+                    case 5:
+                        PalindromeChecker.PalindromeClass.CheckePalindromeString();
+                        break;
+                    case 6:
+                        CalanderProgram.CalenderInputArray.InputDisplay(args);
+                        break;
+                    case 7:
+                        CalanderUsingQueue.CalanderInput.CalendarStart();
+                        break;
+                    case 8:
+                        CalenderUsingStack.CalenderInputStack.StackCalender();
+                        break;
+                    case 9:
+                        PrimeNumberProgram.PrimeNumber();
+                        break;
+                    case 10:
+                        PrimeNumberAnagramWithTwoDArray.FindAnagramIntoPrimeNumberArray();
+                        break;
+                    case 11:
+                        PrimeWithAnagramNumberQueueOperation.PrimeWithAnagramQueue.PrimeWithAnagramNumber();
+                        break;
+
                 }
             }
             while (choice != 0);
