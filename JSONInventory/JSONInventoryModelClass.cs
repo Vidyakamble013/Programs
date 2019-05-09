@@ -1,27 +1,75 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="JSONInventoryModelClass.cs" company="BridgeLabs">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace ObjectOrientedProgram1.JSONInventory
 {
-    class JSONInventoryModelClass
+    using System.Collections.Generic;
+   
+    /// <summary>
+    /// JSONInventoryModelClass as class
+    /// </summary>
+    public class JSONInventoryModelClass
     {
+        /// <summary>
+        ///  Gets or sets a value indicating whether the product is active. 
+        /// </summary>
         public string Name
-        { get; set; }
+        {
+            get;
+            set;
+        }
 
+        /// <summary>
+        ///  Gets or sets a value indicating whether the product is active. 
+        /// </summary>
         public int Price
-        { get; set;}
+        {
+            get;
+            set;
+        }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether the product is active.
+        /// </summary>
         public int Weight
-        { get; set; }
+        {
+            get;
+            set;
+        }
     }
 
-     class InventoryDisplayInfo
+    /// <summary>
+    /// InventoryDisplayInfo as class
+    /// </summary>
+ public partial class InventoryDisplayInfo
     {
-        public List<JSONInventoryModelClass>Rice { get;set; }
+        /// <summary>
+        ///  Gets or sets a value indicating whether the product is active. 
+        /// </summary>
+        public List<JSONInventoryModelClass> RiceInformation
+        {
+            get;
+            set;
+        }
 
-        public List<JSONInventoryModelClass> Wheat { get; set; }
+        /// <summary>
+        ///  Gets or sets a value indicating whether the product is active. 
+        /// </summary>
+        public List<JSONInventoryModelClass> WheatInformation
+        {
+            get;
+            set;
+        }
 
-        public List<JSONInventoryModelClass>Pulses { get; set; }
+        /// <summary>
+        ///   Gets or sets the name of the PulsesInformation. 
+        /// </summary>
+        public List<JSONInventoryModelClass> PulsesInformation
+        {
+            get;
+            set;
+        }
     }
 }

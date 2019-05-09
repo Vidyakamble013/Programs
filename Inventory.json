@@ -9,14 +9,8 @@
       "Name": "Delhirice",
       "Price": 1000,
       "Weight": 10
-    },
-    {
-      "Name": "Kolam",
-      "Price": 500,
-      "Weight": 5
     }
   ],
-
   "WheatInformation": [
     {
       "Name": "Triticum",
@@ -34,7 +28,7 @@
       "Weight": 10
     }
   ],
-  "Pulses": [
+  "PulsesInformation": [
     {
       "Name": "Cowpea",
       "Price": 500,
@@ -52,4 +46,3 @@
     }
   ]
 }
-

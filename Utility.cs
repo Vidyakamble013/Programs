@@ -1,24 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Utility.cs" company="BridgeLabs">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace ObjectOrientedProgram1
 {
-   public class Utility
+    using System;
+    
+    /// <summary>
+    /// Utility as class
+    /// </summary>
+    public class Utility
     {
+        /// <summary>
+        /// IsStringCharacter as function
+        /// </summary>
+        /// <param name="character">character as field</param>
+        /// <returns>returns boolean</returns>
         public static bool IsStringCharacter(string character)
         {
             try
             {
                 int length = character.Length;
-
-                if(character.Contains(" "))
+                if (character.Contains(" "))
                 {
                     Console.WriteLine("Empty Spaces in not allowed");
                     return false;
                 }
 
-                for (int num= 0; num < 10; num++)
+                for (int num = 0; num < 10; num++)
                 {
                     if (character.Contains(num.ToString()))
                     {
@@ -40,7 +50,13 @@ namespace ObjectOrientedProgram1
 
             return true;
         }
-         public static bool IsNumberOnly(double number)
+
+        /// <summary>
+        /// IsNumberOnly as function
+        /// </summary>
+        /// <param name="number">number as field</param>
+        /// <returns>returns boolean</returns>
+        public static bool IsNumberOnly(double number)
         {
             try
             {
@@ -54,9 +70,8 @@ namespace ObjectOrientedProgram1
             {
                 Console.WriteLine(ex.Message);
             }
-            return true;
-        }
 
-       
+            return true;
+        }      
     }
 }
