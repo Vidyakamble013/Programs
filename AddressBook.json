@@ -1,0 +1,47 @@
+[
+  {
+    "Firstname": "vidya",
+    "Lastname": "kamble",
+    "Address": "Mugali",
+    "City": "kolhapur",
+    "State": "Maharashta",
+    "Zip": 4162018,
+    "Phonenumber": 8660216992
+  },
+  {
+    "Firstname": "swati",
+    "Lastname": "kamble",
+    "Address": "Mugali",
+    "City": "kolhapur",
+    "State": "Maharashta",
+    "Zip": 4162018,
+    "Phonenumber": 7744965397
+  },
+  {
+    "Firstname": "khushi",
+    "Lastname": "mane",
+    "Address": "mumbai",
+    "City": "mumbai",
+    "State": "Maharashta",
+    "Zip": 4162018,
+    "Phonenumber": 8660216992
+  },
+  {
+    "Firstname": "reshma",
+    "Lastname": "mahajan",
+    "Address": "pune",
+    "City": "pune",
+    "State": "Maharashta",
+    "Zip": 4162018,
+    "Phonenumber": 8660216992
+  },
+  {
+    "Firstname": "vinayak",
+    "Lastname": "kamble",
+    "Address": "Mugali",
+    "City": "kolhapur",
+    "State": "Maharashta",
+    "Zip": 4162018,
+    "Phonenumber": 8660216992
+  }
+]

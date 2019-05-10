@@ -38,5 +38,7 @@ namespace ObjectOrientedProgram1
         /// the readonly
         /// </summary>
         public readonly string TranscationData = "C:/Users/admin/source/repos/ObjectOrientedProgram1/ObjectOrientedProgram1/CommercialDataProcessing/Transcation.json";
+
+        public readonly string AddressBook = "C:/Users/admin/source/repos/ObjectOrientedProgram1/ObjectOrientedProgram1/CommercialDataProcessing/AddressBook.json";
     }
 }

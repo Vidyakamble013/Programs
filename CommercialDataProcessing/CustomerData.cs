@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ICustomer.cs" company="BridgeLabs">
+// <copyright file="CustomerData.cs" company="BridgeLabs">
 //     Company copyright tag.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -12,7 +12,7 @@ namespace ObjectOrientedProgram1.CommercialDataProcessing
     using Newtonsoft.Json.Linq;
 
     /// <summary>
-    /// ICustomer is interface
+    /// ICustomer is collection
     /// </summary>
     public interface ICustomer
     {

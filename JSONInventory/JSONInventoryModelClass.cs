@@ -41,9 +41,9 @@ namespace ObjectOrientedProgram1.JSONInventory
     }
 
     /// <summary>
-    /// InventoryDisplayInfo as class
+    /// InventoryDisplayInfo as partial class 
     /// </summary>
- public partial class InventoryDisplayInfo
+    public partial class InventoryDisplayInfo
     {
         /// <summary>
         ///  Gets or sets a value indicating whether the product is active. 
