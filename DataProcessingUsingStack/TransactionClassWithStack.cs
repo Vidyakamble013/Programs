@@ -29,6 +29,8 @@ namespace ObjectOrientedProgram1.DataProcessingUsingStack
                 using (StreamReader streamReader = new StreamReader(constantClass.TranscationData))
                 {
                     string jsonString = streamReader.ReadToEnd();
+
+                    //// It returns JSON data in string format. In Deserialization.
                     transactionModels = JsonConvert.DeserializeObject<IList<CommercialDataProcessing.TransactionModelClass>>(jsonString);
                     streamReader.Close();
                     foreach (var item in transactionModels)

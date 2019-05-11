@@ -89,6 +89,8 @@ namespace ObjectOrientedProgram1.InventoryManagement
                 {
                     string jsonString = streamReader.ReadToEnd();
                     var jsonObject = JObject.Parse(jsonString);
+
+                    //// It returns JSON data in string format. In Deserialization.
                     InventoryModelClass.InventoryInfo list = JsonConvert.DeserializeObject<InventoryModelClass.InventoryInfo>(jsonString);
                     IList<InventoryModelClass> rice = list.RiceInformation;
                     Console.WriteLine("Enter Rice Name ");
@@ -127,6 +129,7 @@ namespace ObjectOrientedProgram1.InventoryManagement
                             Console.WriteLine(item.Name + " " + item.Price + " " + item.Weight);
                         }
 
+                        //// creates an instance of BlogSiteclass and assigns values to its properties.
                         string outputString = JsonConvert.SerializeObject(list);
                         File.WriteAllText(constantClass.InventoryData, outputString);
                     }
@@ -153,6 +156,8 @@ namespace ObjectOrientedProgram1.InventoryManagement
                 {
                     string jsonString = streamReader.ReadToEnd();
                     var jsonObject = JObject.Parse(jsonString);
+
+                    //// It returns JSON data in string format. In Deserialization.
                     InventoryModelClass.InventoryInfo list = JsonConvert.DeserializeObject<InventoryModelClass.InventoryInfo>(jsonString);
                     IList<InventoryModelClass> wheat = list.WheatInformation;
                     Console.WriteLine("Enter Wheat name");
@@ -193,6 +198,7 @@ namespace ObjectOrientedProgram1.InventoryManagement
                             Console.WriteLine(item.Name + " " + item.Price + " " + item.Weight);
                         }
 
+                        //// creates an instance of BlogSiteclass and assigns values to its properties.
                         string outputString = JsonConvert.SerializeObject(list);
                         File.WriteAllText(constantClass.InventoryData, outputString);
                     }
@@ -216,6 +222,8 @@ namespace ObjectOrientedProgram1.InventoryManagement
                 {
                     string jsonString = streamReader.ReadToEnd();
                     var jsonObject = JObject.Parse(jsonString);
+
+                    //// It returns JSON data in string format. In Deserialization.
                     InventoryModelClass.InventoryInfo list = JsonConvert.DeserializeObject<InventoryModelClass.InventoryInfo>(jsonString);
                     IList<InventoryModelClass> pulses = list.PulsesInformation;
                     Console.WriteLine("Enter Pulses name");
@@ -257,6 +265,7 @@ namespace ObjectOrientedProgram1.InventoryManagement
                             Console.WriteLine(item.Name + " " + item.Price + " " + item.Weight);
                         }
 
+                        //// creates an instance of BlogSiteclass and assigns values to its properties.
                         string output = JsonConvert.SerializeObject(list);
                         File.WriteAllText(constantClass.InventoryData, output);
                     }                    
@@ -306,6 +315,7 @@ namespace ObjectOrientedProgram1.InventoryManagement
                     var deleteRice = arrayofRice.FirstOrDefault(objName => objName["Name"].Value<string>().Equals(nameofRice));
                     arrayofRice.Remove(deleteRice);
 
+                    //// creates an instance of BlogSiteclass and assigns values to its properties.
                     string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                     File.WriteAllText(constantClass.InventoryData, output);
                     Console.WriteLine(arrayofRice);
@@ -339,6 +349,8 @@ namespace ObjectOrientedProgram1.InventoryManagement
                 {
                     var brandName = string.Empty;
                     var deleteWheatName = arrayofWheat.FirstOrDefault(objName => objName["Name"].Value<string>().Equals(nameofWheat));
+
+                    //// creates an instance of BlogSiteclass and assigns values to its properties.
                     string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                     File.WriteAllText(constantClass.InventoryData, output);
                     Console.WriteLine(arrayofWheat);
@@ -372,6 +384,8 @@ namespace ObjectOrientedProgram1.InventoryManagement
                 {
                     var brandName = string.Empty;
                     var deletenameofPulses = arrayofPulses.FirstOrDefault(objName => objName["Name"].Value<string>().Equals(nameofPulses));
+
+                    //// creates an instance of BlogSiteclass and assigns values to its properties.
                     string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                     File.WriteAllText(constantClass.InventoryData, output);
                 }
@@ -432,7 +446,9 @@ namespace ObjectOrientedProgram1.InventoryManagement
                     }
 
                     jsonObject["Rices"] = arrayofRice;
-                    string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
+
+                    //// creates an instance of BlogSiteclass and assigns values to its properties.
+                    string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                     File.WriteAllText(constantClass.InventoryData, output);
                 }
                 else
@@ -493,7 +509,9 @@ namespace ObjectOrientedProgram1.InventoryManagement
                     }
 
                     jsonObject["Wheat"] = arrayofWheat;
-                    string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
+
+                    //// creates an instance of BlogSiteclass and assigns values to its properties.
+                    string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                     File.WriteAllText(constantClass.InventoryData, output);
                 }
                 else
@@ -554,7 +572,9 @@ namespace ObjectOrientedProgram1.InventoryManagement
                     }
 
                     jsonObject["Pulses"] = arrayofPulses;
-                    string output = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject, Newtonsoft.Json.Formatting.Indented);
+
+                    //// creates an instance of BlogSiteclass and assigns values to its properties.
+                    string output = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                     File.WriteAllText(constantClass.InventoryData, output);
                 }
                 else
@@ -580,6 +600,8 @@ namespace ObjectOrientedProgram1.InventoryManagement
                 using (StreamReader streamReader = File.OpenText(constantClass.InventoryData))
                 {
                     string jsonString = streamReader.ReadToEnd();
+
+                    //// It returns JSON data in string format. In Deserialization.
                     InventoryModelClass.InventoryInfo list = JsonConvert.DeserializeObject<InventoryModelClass.InventoryInfo>(jsonString);
                     IList<InventoryModelClass> rice = list.RiceInformation;
                     Console.WriteLine("Types of rices");

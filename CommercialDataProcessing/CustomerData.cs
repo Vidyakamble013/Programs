@@ -79,10 +79,12 @@ namespace ObjectOrientedProgram1.CommercialDataProcessing
                         string json = stream.ReadToEnd();
                         ////closing the file
                         stream.Close();
-                        ////Deserialize the customet model file
+
+                        //// It returns JSON data in string format. In Deserialization
                         customers = JsonConvert.DeserializeObject<List<CustomerModelClass>>(json);
                         customers.Add(customerModel);
-                        ////Serialize the customer model object
+
+                        //// creates an instance of BlogSiteclass and assigns values to its
                         var convertedJson = JsonConvert.SerializeObject(customers);
                         ////writing all the text in to a file
                         File.WriteAllText(this.constant.CustomerData, convertedJson);
@@ -116,8 +118,10 @@ namespace ObjectOrientedProgram1.CommercialDataProcessing
                 using (StreamReader stream = new StreamReader(this.constant.CustomerData))
                 {
                     string json = stream.ReadToEnd();
+                    //// close the file
                     stream.Close();
-                    ////Deserialize the customet model file
+
+                    /// It returns JSON data in string format. In Deserialization.
                     customers = JsonConvert.DeserializeObject<IList<CustomerModelClass>>(json);
 
                     //// Checks for file is null

@@ -54,11 +54,14 @@ namespace ObjectOrientedProgram1.CommercialDataProcessing
                     using (StreamReader stream = new StreamReader(this.constants.StockData))
                     {
                         string json = stream.ReadToEnd();
+                        //// close file
                         stream.Close();
+
+                        /// It returns JSON data in string format. In Deserialization.
                         stock = JsonConvert.DeserializeObject<List<StockDataModelClass>>(json);
                         stock.Add(stockDataModel);
 
-                        ////searializeing the object
+                        //// creates an instance of BlogSiteclass and assigns values to its properties.
                         var convertedJson = JsonConvert.SerializeObject(stock);
                         File.WriteAllText(this.constants.StockData, convertedJson);
                         Console.WriteLine("new stock added");
@@ -86,7 +89,8 @@ namespace ObjectOrientedProgram1.CommercialDataProcessing
                 {
                     string json = stream.ReadToEnd();
                     stream.Close();
-                    ////Deserializeing the object
+
+                    /// It returns JSON data in string format. In Deserialization.
                     stock = JsonConvert.DeserializeObject<List<StockDataModelClass>>(json);
                 }
             }

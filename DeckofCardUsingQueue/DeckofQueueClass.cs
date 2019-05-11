@@ -53,6 +53,7 @@ namespace ObjectOrientedProgram1.DeckofCardUsingQueue
         /// <returns>return collection type</returns>
         public static Queue<Queue<string>> SortCardFunction(string[,] cardForPlayer)
         {
+            //// used generic collection 
             Queue<Queue<string>> sortCard = new Queue<Queue<string>>();
             {
                 try

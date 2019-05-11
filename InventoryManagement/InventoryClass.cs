@@ -27,6 +27,8 @@ namespace ObjectOrientedProgram1.InventoryManagement
                 using (StreamReader streamReader = File.OpenText(constantClass.InventoryData))
                 {
                     string jsonString = streamReader.ReadToEnd();
+
+                    //// It returns JSON data in string format. In Deserialization.
                     JSONInventory.InventoryDisplayInfo list = JsonConvert.DeserializeObject<JSONInventory.InventoryDisplayInfo>(jsonString);
                     IList<JSONInventory.JSONInventoryModelClass> rice = list.RiceInformation;
                     Console.WriteLine("Different Types of Rices");

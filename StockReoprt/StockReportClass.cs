@@ -31,6 +31,7 @@ namespace ObjectOrientedProgram1.StockReoprt
                 using (StreamReader stream = File.OpenText(constantClass.StockReoprt))
                 {
                     string jsonString = stream.ReadToEnd();
+                    //// It returns JSON data in string format. In Deserialization.
                     List<StockModelClass> list = JsonConvert.DeserializeObject<List<StockModelClass>>(jsonString);
                     double totalSum = 0;
 

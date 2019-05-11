@@ -33,6 +33,8 @@ namespace ObjectOrientedProgram1.DataProcessingUsingQueue
                 using (StreamReader streamReader = new StreamReader(constantClass.TranscationData))
                 {
                     string jsonString = streamReader.ReadToEnd();
+
+                    //// It returns JSON data in string format. In Deserialization.
                     transcationModels = JsonConvert.DeserializeObject<IList<CommercialDataProcessing.TransactionModelClass>>(jsonString);
 
                     //// access data into a TransactionModelClass class

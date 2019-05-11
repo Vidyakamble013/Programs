@@ -31,6 +31,7 @@ namespace ObjectOrientedProgram1.DataProcessingUsingLinkedList
                 {
                     string jsonString = streamReader.ReadToEnd();
 
+                    //// It returns JSON data in string format. In Deserialization.
                     transcationClasses = JsonConvert.DeserializeObject<IList<CommercialDataProcessing.TransactionModelClass>>(jsonString);
                     streamReader.Close();   
                 }

@@ -60,7 +60,10 @@ namespace ObjectOrientedProgram1.CommercialDataProcessing
                 using (StreamReader stream = new StreamReader(constants.TranscationData))
                 {
                     string json = stream.ReadToEnd();
+                    //// Close file
                     stream.Close();
+
+                    //// creates an instance of BlogSiteclass and assigns values to its properties.
                     transactions = JsonConvert.DeserializeObject<IList<TransactionModelClass>>(json);
                     stream.Close();
                 }
@@ -199,6 +202,8 @@ namespace ObjectOrientedProgram1.CommercialDataProcessing
                 IList<TransactionModelClass> transactionModels = TransactionClass.GetAllTransactions();
                 transactionModels.Add(transactionModel);
                 ConstantClass constants = new ConstantClass();
+
+                //// Write file to json array
                 TransactionClass.WriteFile(constants.StockData, stockModels);
                 TransactionClass.WriteFile(constants.CustomerData, customerModels);
                 TransactionClass.WriteFile(constants.TranscationData, transactionModels);
