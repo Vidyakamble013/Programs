@@ -1,77 +1,69 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="Node.cs" company="BridgeLabz">
+// <copyright file="DequeueNode.cs" company="BridgeLabz">
 //     Company copyright tag.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace DataStructureProgram.OrderedList
+namespace DataStructureProgram.PalindromeChecker
 {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
     /// <summary>
-    /// Node as class
+    /// DequeNode class
     /// </summary>
-   public class Node
+    /// <typeparam name="T">name type of field</typeparam>
+    public class DequeueNode<T>
     {
         /// <summary>
-        /// next is objects
+        /// data field
         /// </summary>
-        private Node next;
+        private T data;
 
         /// <summary>
-        /// data as member
+        /// DequeNode is type of next object
         /// </summary>
-        private int data;
+        private DequeueNode<T> next;
 
         /// <summary>
-        /// position as parameter
+        /// DequeNode is type of pre object
         /// </summary>
-        private long position;
+        private DequeueNode<T> pre;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Node"/> class.
+        /// Initializes a new instance of the <see cref="DequeueNode"/> class.
         /// </summary>
-        /// <param name="data">data as parameter</param>
-        /// <param name="position">position as parameter</param>
-        public Node(int data, long position)
+        /// <param name="data">data field</param>
+        public DequeueNode(T data)
         {
-            this.position = position;
             this.data = data;
         }
 
         /// <summary>
         /// Gets or sets a value indicating whether SA1623 works with {para} tags.
         /// </summary>
-        public Node Next
-        {
-            get
-            {
-                return this.next;
-            }
-
-            set
-            {
-                this.next = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
-        /// </summary>
-        public long Position
-        {
-            get { return this.position; }
-            set { this.position = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
-        /// </summary>
-        public int Data
+        public T Data
         {
             get { return this.data; }
             set { this.data = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
+        /// </summary>
+        public DequeueNode<T> Next
+        {
+            get { return this.next; }
+            set { this.next = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
+        /// </summary>
+        public DequeueNode<T> Pre
+        {
+            get { return this.pre; }
+            set { this.pre = value; }
         }
     }
 }

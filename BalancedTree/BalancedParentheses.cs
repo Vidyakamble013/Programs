@@ -28,11 +28,13 @@ namespace DataStructureProgram
                 stack.StackInitialise(Convert.ToInt32(150));
                 bool loopingexpression = true;
                 expressionlength:
+                //// check while loop condition
                 while (loopingexpression)
                 {
                     Console.WriteLine("Enter any exprssion");
                     stringexpression = Console.ReadLine();
 
+                    //// call StringChecker function in Utility class
                     if (Utility.StringChecker(stringexpression))
                     {
                         Console.WriteLine("Invalid Expression");
@@ -41,32 +43,45 @@ namespace DataStructureProgram
 
                     break;
                 }
+
                 expressionlength = stringexpression.Length;
                 for (int i = 0; i < expressionlength; i++)
                 {
                     char character = stringexpression[i];
+
+                    //// check all parantheses
                     if (character == '(')
                     {
                         break;
                     }
+
+                    //// check all parantheses
                     if (character == '[')
                     {
                         break;
                     }
+
+                    //// check all parantheses
                     if (character == '{')
                     {
                         break;
                     }
+
+                    //// check all parantheses
                     if (character == ')')
                     {
                         Console.WriteLine("Invalid Expression");
                         goto expressionlength;
                     }
+
+                    //// check all parantheses
                     if (character == ']')
                     {
                         Console.WriteLine("Invalid Expression");
                         goto expressionlength;
                     }
+
+                    //// check all parantheses
                     if (character == '}')
                     {
                         Console.WriteLine("Invalid Expression");
@@ -77,31 +92,41 @@ namespace DataStructureProgram
                 for (int i = 0; i < expressionlength; i++)
                 {
                     char character = stringexpression[i];
+                    //// check all parantheses
                     if (character == '(')
                     {
                         stack.Push(character);
                     }
+
+                    //// check all parantheses
                     if (character == '{')
                     {
                         stack.Push(character);
                     }
+
+                    //// check all parantheses
                     if (character == '[')
                     {
                         stack.Push(character);
-                    }                    
+                    }
+                    //// check all parantheses
                     else if (character == ')')
                     {
                         stack.Pop();
                     }
+                    //// check all parantheses
                     else if (character == '}')
                     {
                         stack.Pop();
                     }
+                    //// check all parantheses
                     else if (character == ']')
                     {
                         stack.Pop();
                     }
                 }
+
+                //// call IsEmpty() function
                 if (stack.IsEmpty())
                 {
                     Console.WriteLine("Parenthese are balanced");

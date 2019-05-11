@@ -1,20 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DataStructureProgram.CalanderUsingQueue
+﻿//-----------------------------------------------------------------------
+// <copyright file="CalendarTwoDArray.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//----------------------------------------------------------------------
+namespace DataStructureProgram.CalanderProgram
 {
-    class QueueCalenderClass
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Calendar TwoDArray as class
+    /// </summary>
+    public class CalendarTwoDArray
     {
+        /// <summary>
+        /// PrintCalendar function
+        /// </summary>
+        /// <param name="month">month as parameter</param>
+        /// <param name="year">year as parameter</param>
         public static void PrintCalendar(int month, int year)
         {
             try
             {
-                Queue<int> queueInt = new Queue<int>();
-                Queue<string> queueString = new Queue<string>();
                 string[] monthsArray = { string.Empty, "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
                 int[] numberOfDaysArray = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-                string[] days = { "S", "M", "Tu", "W", "Th", "F", "S" };
 
                 ////to check if the given year is aleap year
                 if (month == 2 && Utility.CheckLeapYear(year))
@@ -24,48 +34,37 @@ namespace DataStructureProgram.CalanderUsingQueue
 
                 Console.WriteLine(monthsArray[month]);
                 Console.WriteLine(year);
-                Console.WriteLine(" S\tM\tT\tW\tTH\tF\tS");
+                Console.WriteLine(" S   M   T   W   TH   F   S");
 
-                //// to get the first day of the given month.
+                ////getting the first day of specified month and year
                 int day = Utility.DaysOfWeek(month, 1, year);
 
-                //// enqueing all the days of specified month.
-                for (int i = 1; i < numberOfDaysArray[month]; i++)
-                {
-                    queueInt.Enqueue(i);
-                }
-
-                for (int i = 1; i < days.Length; i++)
-                {
-                    queueString.Enqueue(days[i]);
-                }
-
-                Console.WriteLine();
-
-                //// leaves empty spaces till the first day starts.
+                //// check the days of week using for loop
                 for (int i = 0; i < day; i++)
                 {
-                    Console.Write("\t");
+                    Console.Write("    ");
                 }
 
+                //// take loop for month range
                 for (int i = 1; i <= numberOfDaysArray[month]; i++)
                 {
                     if (i < 10)
                     {
-                        Console.Write("  " + queueInt.Dequeue() + "\t");
+                        Console.Write("  " + i + " "); ////for spacing purpose when day i is less double space
                     }
 
                     if (i > 9)
                     {
-                        Console.Write(" " + i + "\t");
+                        Console.Write(" " + i + " ");  ////for single space
                     }
 
-                    //// to get to the next line after.
                     if ((i + day) % 7 == 0)
                     {
-                        Console.WriteLine();
+                        Console.WriteLine();  //// to get to the next line after 7 days
                     }
                 }
+
+                Console.Read();
             }
             catch (Exception ex)
             {

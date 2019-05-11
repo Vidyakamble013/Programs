@@ -40,6 +40,11 @@ namespace DataStructureProgram
             }
         }
 
+        /// <summary>
+        /// StringChecker function
+        /// </summary>
+        /// <param name="name">name field</param>
+        /// <returns>return boolean</returns>
         public static bool StringChecker(string name)
         {
             try
@@ -60,6 +65,11 @@ namespace DataStructureProgram
             }
         }
 
+        /// <summary>
+        /// ContainsCharacter function
+        /// </summary>
+        /// <param name="personName">personName field</param>
+        /// <returns>return boolean</returns>
         public static bool ContainsCharacter(string personName)
         {
             char[] personNameArray = personName.ToCharArray();
@@ -70,12 +80,17 @@ namespace DataStructureProgram
                     return true;
                 }
             }
+
             return false;
         }
 
+        /// <summary>
+        /// CheckLeapYear function
+        /// </summary>
+        /// <param name="year">year field</param>
+        /// <returns>return boolean</returns>
         public static bool CheckLeapYear(int year)
         {
-
             if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
             {
                 return true;
@@ -86,6 +101,13 @@ namespace DataStructureProgram
             }
         }
 
+        /// <summary>
+        /// DaysOfWeek function
+        /// </summary>
+        /// <param name="m">m parameter</param>
+        /// <param name="d">d parameter</param>
+        /// <param name="y">y parameter</param>
+        /// <returns>return number</returns>
         public static int DaysOfWeek(int m, int d, int y)
         {
             int y0, x, m0, d0;
@@ -97,6 +119,11 @@ namespace DataStructureProgram
             return days[d0];
         }
 
+        /// <summary>
+        /// PrimeNumber function
+        /// </summary>
+        /// <param name="n">n parameter</param>
+        /// <returns>return boolean</returns>
         public static bool PrimeNumber(int n)
         {
             try
@@ -124,6 +151,12 @@ namespace DataStructureProgram
             return true;
         }
 
+        /// <summary>
+        /// AnagramNumber function
+        /// </summary>
+        /// <param name="string1">string1 parameter</param>
+        /// <param name="string2">string2 parameter</param>
+        /// <returns>return boolean</returns>
         public static bool AnagramNumber(string string1, string string2)
         {
             try

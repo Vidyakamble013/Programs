@@ -1,10 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="QueueClass.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace DataStructureProgram.CalanderUsingQueue
 {
-   public  class QueueClass<T>
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// QueueClass class
+    /// </summary>
+    /// <typeparam name="T">name is type of parameter</typeparam>
+    public class QueueClass<T>
     {
         /// <summary>
         /// The queue maximum size

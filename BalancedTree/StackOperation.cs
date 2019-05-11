@@ -1,4 +1,9 @@
-﻿namespace DataStructureProgram.BalancedTree
+﻿//-----------------------------------------------------------------------
+// <copyright file="StackOperation.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//----------------------------------------------------------------------
+namespace DataStructureProgram.BalancedTree
 {
     using System;
     using System.Collections.Generic;
@@ -9,20 +14,31 @@
     /// </summary>
     public class StackOperation
     {
-        private int maxsize;
+        /// <summary>
+        /// size field
+        /// </summary>
+        private int size;
+
+        /// <summary>
+        /// stack array char array
+        /// </summary>
         private char[] stackarray;
+
+        /// <summary>
+        /// top field
+        /// </summary>
         private int top;
 
         /// <summary>
-        /// StackInitialise as function
+        /// Stack Initialize as function
         /// </summary>
         /// <param name="stacksize">stacksize as parameter</param>
         public void StackInitialise(int stacksize)
         {
             try
             {
-                this.maxsize = stacksize;
-                this.stackarray = new char[this.maxsize];
+                this.size = stacksize;
+                this.stackarray = new char[this.size];
                 this.top = -1;
             }
             catch (Exception ex)
@@ -30,6 +46,11 @@
                 Console.WriteLine(ex.Message);
             }
         }
+
+        /// <summary>
+        /// Push is function
+        /// </summary>
+        /// <param name="character">character field</param>
         public void Push(char character)
         {
             try
@@ -43,6 +64,10 @@
             }
         }
 
+        /// <summary>
+        /// Pop is function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public long Pop()
         {
             try
@@ -64,6 +89,10 @@
             }
         }
 
+        /// <summary>
+        /// IsEmpty function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public bool IsEmpty()
         {
             try
@@ -75,11 +104,16 @@
                 throw new Exception(ex.Message);
             }
         }
+
+        /// <summary>
+        /// IsFull function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public bool IsFull()
         {
             try
             {
-                return this.top == this.maxsize - 1;
+                return this.top == this.size - 1;
             }
             catch (Exception ex)
             {

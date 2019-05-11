@@ -1,17 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="Dequeue.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace DataStructureProgram.PalindromeChecker
 {
-   public  class Dequeue<T>
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Dequeue as class
+    /// </summary>
+    /// <typeparam name="T">name as field</typeparam>
+    public class Dequeue<T>
     {
-        private DequeNode<T> front;
+        /// <summary>
+        /// DequeNode class object of front
+        /// </summary>
+        private DequeueNode<T> front;
 
-        private DequeNode<T> rear;
+        /// <summary>
+        /// DequeNode class object of rear
+        /// </summary>
+        private DequeueNode<T> rear;
 
+        /// <summary>
+        /// size field
+        /// </summary>
         private long size = 0;
 
+        /// <summary>
+        /// AddToFront as function
+        /// </summary>
+        /// <param name="data">data as field</param>
         public void AddToFront(T data)
         {
             try
@@ -23,12 +45,13 @@ namespace DataStructureProgram.PalindromeChecker
                 }
                 else
                 {
-                    DequeNode<T> tempNode = null;
+                    DequeueNode<T> tempNode = null;
                     tempNode.Data = data;
                     tempNode.Next = this.front;
                     this.front.Pre = tempNode;
                     this.front = tempNode;
                 }
+
                 this.size++;
             }
             catch (Exception ex)
@@ -37,23 +60,28 @@ namespace DataStructureProgram.PalindromeChecker
             }
         }
 
+        /// <summary>
+        /// AddToRear function
+        /// </summary>
+        /// <param name="data">data as field</param>
         public void AddToRear(T data)
         {
             try
             {
                 if (this.front == null)
                 {
-                    DequeNode<T> dequeNode = new DequeNode<T>(data);
+                    DequeueNode<T> dequeNode = new DequeueNode<T>(data);
                     this.front = dequeNode;
                     this.rear = this.front;
                 }
                 else
                 {
-                    DequeNode<T> dequeNode = new DequeNode<T>(data);
+                    DequeueNode<T> dequeNode = new DequeueNode<T>(data);
                     this.rear.Next = dequeNode;
                     dequeNode.Pre = this.rear;
                     this.rear = dequeNode;
                 }
+
                 this.size++;
             }
             catch (Exception ex)
@@ -62,6 +90,10 @@ namespace DataStructureProgram.PalindromeChecker
             }
         }
 
+        /// <summary>
+        /// RemoveToFront function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public T RemoveToFront()
         {
             try
@@ -76,6 +108,7 @@ namespace DataStructureProgram.PalindromeChecker
                     dataToRemove = this.front.Data;
                     this.front = this.front.Next;
                 }
+
                 this.size--;
                 return dataToRemove;
             }
@@ -85,6 +118,10 @@ namespace DataStructureProgram.PalindromeChecker
             }
         }
 
+        /// <summary>
+        /// RemoveToFront type 
+        /// </summary>
+        /// <returns>return type</returns>
         public T RemoveToRear()
         {
             try
@@ -100,21 +137,25 @@ namespace DataStructureProgram.PalindromeChecker
                     this.rear = this.rear.Pre;
                     this.rear.Next = null;
                 }
+
                 this.size--;
                 return dataToRemove;
             }
             catch (Exception ex)
             {
-              throw new Exception(ex.Message);
-                
+              throw new Exception(ex.Message);                
             }
         }
 
+        /// <summary>
+        /// IsEmpty as function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public bool IsEmpty()
         {
             try
             {
-                if(this.front == null)
+                if (this.front == null)
                 {
                     return true;
                 }
@@ -130,18 +171,20 @@ namespace DataStructureProgram.PalindromeChecker
             }
         }
 
+        /// <summary>
+        /// Size function
+        /// </summary>
+        /// <returns>return long</returns>
         public long Size()
         {
             try
             {
                 return this.size;
-               
             }
             catch (Exception ex)
             {
                throw new Exception(ex.Message);
             }
         }
-
     }
 }

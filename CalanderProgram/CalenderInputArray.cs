@@ -1,18 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="CalenderInputArray.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//----------------------------------------------------------------------
 namespace DataStructureProgram.CalanderProgram
 {
-    class CalenderInputArray
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Calendar InputArray is class
+    /// </summary>
+   public class CalenderInputArray
     {
+        /// <summary>
+        /// InputDisplay function
+        /// </summary>
+        /// <param name="args">args parameter</param>
         public static void InputDisplay(string[] args)
         {
             try
             {
                 int year = 0;
                 int month = 0;
-
                 //// checks the number of Arguments passed by user
                 if (args.Length != 2)
                 {
@@ -36,6 +47,7 @@ namespace DataStructureProgram.CalanderProgram
                     return;
                 }
 
+                //// call IsNumber function in Utility class
                 if (Utility.IsNumber(args[1]) == false)
                 {
                     Console.WriteLine("Invalid year");
@@ -52,7 +64,7 @@ namespace DataStructureProgram.CalanderProgram
 
                 year = Convert.ToInt32(args[1]);
                 ////call to displaying calender
-                CalanderTwoDArray.PrintCalendar(month, year);
+                CalendarTwoDArray.PrintCalendar(month, year);
                 Console.WriteLine();
             }
             catch (Exception ex)

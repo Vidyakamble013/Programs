@@ -1,15 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="StackClass.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace DataStructureProgram.CalenderUsingStack
 {
-    class StackClass
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// StackClass class
+    /// </summary>
+   public class StackClass
     {
+        /// <summary>
+        /// maxSize field
+        /// </summary>
         private int maxSize;
+
+        /// <summary>
+        /// stackArray private array
+        /// </summary>
         private int[] stackArray;
+
+        /// <summary>
+        /// top filed
+        /// </summary>
         private int top;
 
+        /// <summary>
+        /// StackInitialize function
+        /// </summary>
+        /// <param name="stackSize">stackSize filed</param>
         public void StackInitialise(int stackSize)
         {
             try
@@ -24,6 +47,10 @@ namespace DataStructureProgram.CalenderUsingStack
             }
         }
 
+        /// <summary>
+        /// Push function
+        /// </summary>
+        /// <param name="data">data as field</param>
         public void Push(int data)
         {
             try
@@ -37,6 +64,10 @@ namespace DataStructureProgram.CalenderUsingStack
             }
         }
 
+        /// <summary>
+        /// Pop function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public int Pop()
         {
             try
@@ -45,9 +76,9 @@ namespace DataStructureProgram.CalenderUsingStack
                 {
                     return 0;
                 }
+
                 this.top--;
                 return this.stackArray[this.top];
-
             }
             catch (Exception ex)
             {
@@ -56,6 +87,10 @@ namespace DataStructureProgram.CalenderUsingStack
             }
         }
 
+        /// <summary>
+        /// Peek function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public int Peek()
         {
             try
@@ -69,6 +104,10 @@ namespace DataStructureProgram.CalenderUsingStack
             }
         }
 
+        /// <summary>
+        /// IsEmpty function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public bool IsEmpty()
         {
             try
@@ -81,6 +120,11 @@ namespace DataStructureProgram.CalenderUsingStack
                 return false;
             }
         }
+
+        /// <summary>
+        /// IsFull function
+        /// </summary>
+        /// <returns>returns boolean</returns>
         public bool IsFull()
         {
             try

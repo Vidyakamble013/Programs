@@ -44,9 +44,9 @@ namespace DataStructureProgram.OrderedList
         /// Insert as function 
         /// </summary>
         /// <param name="data">data as parameter</param>
-        /// <param name="pos">pos as parameter</param>
+        /// <param name="position">position as parameter</param>
         /// <returns>return boolean</returns>
-        bool Insert(int data, long pos);
+        bool Insert(int data, long position);
 
         /// <summary>
         /// Print as function

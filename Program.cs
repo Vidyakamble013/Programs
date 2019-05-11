@@ -51,13 +51,13 @@ namespace DataStructureProgram
                         BankingOperation.BankCounter.Counter();
                         break;
                     case 5:
-                        PalindromeChecker.PalindromeClass.CheckePalindromeString();
+                        PalindromeChecker.PalindromeClass.CheckPalindromeString();
                         break;
                     case 6:
                         CalanderProgram.CalenderInputArray.InputDisplay(args);
                         break;
                     case 7:
-                        CalanderUsingQueue.CalanderInput.CalendarStart();
+                        CalanderUsingQueue.CalendarInput.CalendarStart();
                         break;
                     case 8:
                         CalenderUsingStack.CalenderInputStack.StackCalender();
@@ -71,7 +71,6 @@ namespace DataStructureProgram
                     case 11:
                         PrimeWithAnagramNumberQueueOperation.PrimeWithAnagramQueue.PrimeWithAnagramNumber();
                         break;
-
                 }
             }
             while (choice != 0);

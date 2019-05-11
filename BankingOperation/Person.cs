@@ -25,7 +25,7 @@ namespace DataStructureProgram.BankingOperation
         private double balance;
 
         /// <summary>
-        /// Person is constructor
+        /// Initializes a new instance of the <see cref="Person"/> class.
         /// </summary>
         /// <param name="name">name as parameter</param>
         /// <param name="balance">balance as parameter</param>
@@ -39,6 +39,7 @@ namespace DataStructureProgram.BankingOperation
                     Console.WriteLine("Account must be positive");
                     return;
                 }
+
                 this.balance = balance;
             }
             catch (Exception ex)
@@ -48,7 +49,7 @@ namespace DataStructureProgram.BankingOperation
         }
 
         /// <summary>
-        /// get & set is the method of Name
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
         /// </summary>
         public string Name
         {
@@ -57,7 +58,7 @@ namespace DataStructureProgram.BankingOperation
         }
 
         /// <summary>
-        /// get & set is the method of Balance
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
         /// </summary>
         public double Balance
         {
@@ -66,15 +67,15 @@ namespace DataStructureProgram.BankingOperation
         }
 
         /// <summary>
-        /// Deposite as class
+        /// Deposit as class
         /// </summary>
-        /// <param name="depositeamount">depositeamount as parameter</param>
+        /// <param name="deposit"> deposit as parameter</param>
         /// <returns>returns boolean</returns>
-        public bool Deposite(int depositeamount)
+        public bool Deposit(int deposit)
         {
             try
             {
-                if (depositeamount <= 0)
+                if (deposit <= 0)
                 {
                     Console.WriteLine("deposite amount must be greater then 0");
                     Console.ReadKey();
@@ -82,7 +83,7 @@ namespace DataStructureProgram.BankingOperation
                 }
                 else
                 {
-                    this.balance = this.balance + depositeamount;
+                    this.balance = this.balance + deposit;
                     Console.WriteLine("Total Acount balance" + " " + this.balance);
                     return true;
                 }
@@ -96,20 +97,20 @@ namespace DataStructureProgram.BankingOperation
         /// <summary>
         /// WithdrawAmount as function
         /// </summary>
-        /// <param name="amountwithdraw">amountwithdraw as parameter</param>
+        /// <param name="withdraw">withdraw as parameter</param>
         /// <returns>return boolean</returns>
-        public bool WithdrawAmount(int amountwithdraw)
+        public bool WithdrawAmount(int withdraw)
         {
             try
             {
-                if (amountwithdraw > this.balance)
+                if (withdraw > this.balance)
                 {
                     Console.WriteLine("enough money");
                     return false;
                 }
                 else
                 {
-                    this.balance = this.balance - amountwithdraw;
+                    this.balance = this.balance - withdraw;
                     Console.WriteLine("Abailable Balance" + " " + this.balance);
                     return true;
                 }

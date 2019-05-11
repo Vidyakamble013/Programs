@@ -14,34 +14,61 @@ namespace DataStructureProgram.BankingOperation
     /// </summary>
    public class Queue
     {
+        /// <summary>
+        /// maximum size of queue filed
+        /// </summary>
         private int maximumsizeofqueue = 1000;
 
+        /// <summary>
+        /// rear field
+        /// </summary>
         private int rear = -1;
 
+        /// <summary>
+        /// front field
+        /// </summary>
         private int front = -1;
 
+        /// <summary>
+        /// Person private array
+        /// </summary>
         private Person[] queuearray = new Person[1000];
 
+        /// <summary>
+        /// size field
+        /// </summary>
         private int size;
 
+        /// <summary>
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
+        /// </summary>
         public int QueueMaximumSize
         {
             get { return this.maximumsizeofqueue; }
             set { this.maximumsizeofqueue = value; }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
+        /// </summary>
         public int Rear
         {
             get { return this.rear; }
             set { this.rear = value; }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
+        /// </summary>
         public int Front
         {
             get { return this.front; }
             set { this.front = value; }
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
+        /// </summary>
         public int Size
         {
             get { return this.size; }
@@ -68,6 +95,7 @@ namespace DataStructureProgram.BankingOperation
                     {
                         this.front = 0;
                     }
+
                     this.rear++;
                     this.queuearray[this.rear] = data;
                     this.size++;
@@ -81,7 +109,7 @@ namespace DataStructureProgram.BankingOperation
         }
 
         /// <summary>
-        /// DequeueOperation as function
+        /// Dequeue Operation as function
         /// </summary>
         /// <returns>return boolean</returns>
         public bool DequeueOperation()

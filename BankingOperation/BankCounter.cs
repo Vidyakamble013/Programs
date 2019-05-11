@@ -35,6 +35,8 @@ namespace DataStructureProgram.BankingOperation
                     ////enter the number of people wants
                     Console.WriteLine("Enter the Number of people in Queue");
                     string stringNumberOfPeople = Console.ReadLine();
+
+                    //// call IsNumber function in Utility class
                     if (Utility.IsNumber(stringNumberOfPeople) == false)
                     {
                         Console.WriteLine("Invalid Input ");
@@ -62,7 +64,7 @@ namespace DataStructureProgram.BankingOperation
                         ////enter the user number
                         Console.WriteLine("Enter the Name for the " + " " + personNumber + " " + " person");
                         personName = Console.ReadLine();
-                        ////checks the proper name
+                        //////// call StringChecker function in Utility class
                         if (Utility.StringChecker(personName))
                         {
                             Console.WriteLine("Please Provide a name");
@@ -75,7 +77,7 @@ namespace DataStructureProgram.BankingOperation
                             continue;
                         }
 
-                        //// checks if person name contains any Number in it.
+                        //// //// call IsNumber function in Utility class
                         if (Utility.IsNumber(personName))
                         {
                             Console.WriteLine("Please provide a proper name");
@@ -92,6 +94,7 @@ namespace DataStructureProgram.BankingOperation
                         Console.WriteLine("Enter the Balance for person " + " " + personName);
                         string stringBalance = Console.ReadLine();
 
+                        //// call IsNumber function in Utility class
                         if (Utility.IsNumber(stringBalance) == false)
                         {
                             Console.WriteLine("invalid input");
@@ -139,7 +142,7 @@ namespace DataStructureProgram.BankingOperation
                         case 1:
                             {
                                 ////store deposite into the array
-                                BankTransaction.DepositeAccountDetails(personArray[person]);
+                                BankTransaction.DepositAccountDetails(personArray[person]);
                                 queue.DequeueOperation();
                                 person = person + 1;
                                 ////checks whether queue is empty
@@ -157,6 +160,8 @@ namespace DataStructureProgram.BankingOperation
                                 BankTransaction.WithdrawAccountDetails(personArray[person]);
                                 queue.DequeueOperation();
                                 person = person + 1;
+
+                                //// call ChekTheSizeofQueue function in Utility class
                                 if (queue.CheckTheSizeofQueue() == 0)
                                 {
                                     loop = false;

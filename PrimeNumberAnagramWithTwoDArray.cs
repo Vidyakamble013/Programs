@@ -1,34 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="PrimeNumberAnagramWithTwoDArray.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace DataStructureProgram
 {
-   public class PrimeNumberAnagramWithTwoDArray
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// PrimeNumberAnagramWithTwoDArray class
+    /// </summary>
+    public class PrimeNumberAnagramWithTwoDArray
     {
+        /// <summary>
+        /// FindAnagramIntoPrimeNumberArray function
+        /// </summary>
         public static void FindAnagramIntoPrimeNumberArray()
         {
             try
             {
                 Utility utility = new Utility();
                 int i = 0, j, count, number;
-
                 int[,] primeNumberArray = new int[10, 50];
-
                 int[,] anagramNumberArray = new int[10, 50];
-
                 for (i = 1; i < 10; i++)
                 {
                     primeNumberArray[i, 0] = primeNumberArray[i - 1, 0] + 100;
                     anagramNumberArray[i, 0] = anagramNumberArray[i - 1, 0] + 100;
                 }
 
-                for (i= 0; i < 10; i++)
+                for (i = 0; i < 10; i++)
                 {
                     count = 0;
                     for (j = 1; j < 100; j++)
                     {
-                        if(Utility.PrimeNumber(primeNumberArray[i, 0]+j))
+                        if (Utility.PrimeNumber(primeNumberArray[i, 0] + j))
                         {
                             count++;
                             primeNumberArray[i, count] = primeNumberArray[i, 0] + j;
@@ -46,26 +54,25 @@ namespace DataStructureProgram
                     }
 
                     Console.WriteLine();
-
                 }
 
-                for (i=0; i<10; i++)
+                for (i = 0; i < 10; i++)
                 {
                     count = 0;
-                    for (j=1; primeNumberArray[i,j]!=0; j++)
+                    for (j = 1; primeNumberArray[i, j] != 0; j++)
                     {
-                        for (number = j+1; primeNumberArray[i, number]!=0; number++)
+                        for (number = j + 1; primeNumberArray[i, number] != 0; number++)
                         {
                             if (Utility.AnagramNumber(Convert.ToString(primeNumberArray[i, j]), Convert.ToString(primeNumberArray[i, number])))
                             {
                                 count++;
                                 anagramNumberArray[i, count++] = primeNumberArray[i, j];
                                 anagramNumberArray[i, count] = primeNumberArray[i, number];
-
                             }
                         }
                     }
                 }
+
                 Console.WriteLine();
                 Console.WriteLine("This Anagram number find into the Prime number array");
                 for (i = 0; i < 10; i++)

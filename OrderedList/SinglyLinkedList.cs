@@ -14,10 +14,19 @@ namespace DataStructureProgram.OrderedList
     /// </summary>
     public class SinglyLinkedList
     {
+        /// <summary>
+        /// head field
+        /// </summary>
         private Node head;
 
+        /// <summary>
+        /// last field
+        /// </summary>
         private Node last;
 
+        /// <summary>
+        /// size field
+        /// </summary>
         private long size = 0;
 
         /// <summary>
@@ -31,7 +40,6 @@ namespace DataStructureProgram.OrderedList
                 Node i;
                 Node j;
                 i = head;
-
                 for (i = head; i.Next != null; i = i.Next)
                 {
                     for (j = head; j.Next != null; j = j.Next)
@@ -51,6 +59,11 @@ namespace DataStructureProgram.OrderedList
             }
         }
 
+        /// <summary>
+        /// Add function
+        /// </summary>
+        /// <param name="number">number as field</param>
+        /// <returns>return boolean</returns>
         public bool Add(int number)
         {
             try
@@ -68,6 +81,7 @@ namespace DataStructureProgram.OrderedList
                     this.last.Next = n;
                     this.last = n;
                 }
+
                 SortLinkedList(this.head);
                 return true;
             }
@@ -94,8 +108,10 @@ namespace DataStructureProgram.OrderedList
                     {
                         return true;
                     }
+
                     temp = temp.Next;
                 }
+
                 return false;
             }
             catch (Exception ex)
@@ -108,7 +124,7 @@ namespace DataStructureProgram.OrderedList
         /// <summary>
         /// Delete as function
         /// </summary>
-        /// <param name="deletenumber">deletenumber as parameter</param>
+        /// <param name="deletenumber">delete number as parameter</param>
         /// <returns>returns boolean</returns>
         public bool Delete(object deletenumber)
         {
@@ -123,13 +139,13 @@ namespace DataStructureProgram.OrderedList
                 {
                     Node temp = this.head;
                     Node remove = null;
-
                     if (temp.Data.Equals(deletenumber))
                     {
                         remove = temp;
                         this.head = temp.Next;
                         return true;
                     }
+
                     for (int i = 0; i < this.size; i++)
                     {
                          if (temp.Data.Equals(deletenumber))
@@ -138,11 +154,12 @@ namespace DataStructureProgram.OrderedList
                             temp.Next = remove.Next;
                             break;
                         }
+
                         temp = temp.Next;
                     }
+
                     Console.WriteLine("Element is remove from list" + remove.Data);
                     remove.Next = null;
-
                     this.Reposition();
                     this.size = this.size - 1;
                     return true;
@@ -159,23 +176,23 @@ namespace DataStructureProgram.OrderedList
         /// Insert as function
         /// </summary>
         /// <param name="data">data as parameter</param>
-        /// <param name="pos">pos as parameter</param>
+        /// <param name="position">position as parameter</param>
         /// <returns>returns boolean</returns>
-        public bool Insert(int data, long pos)
+        public bool Insert(int data, long position)
         {
             try
             {
-                if (pos > this.size)
+                if (position > this.size)
                 {
                     Console.WriteLine("position is greater than existing position");
                     return false;
                 }
                 else
                 {
-                    Node n = new Node(data, pos);
+                    Node n = new Node(data, position);
                     Node temp = this.head;
 
-                    for (int i = 0; i < pos - 1; i++)
+                    for (int i = 0; i < position - 1; i++)
                     {
                         temp = temp.Next;
                     }
@@ -183,7 +200,6 @@ namespace DataStructureProgram.OrderedList
                     Node n1 = temp.Next;
                     temp.Next = n;
                     n.Next = n1;
-
                     temp = null;
                     this.size++;
                     this.Reposition();
@@ -200,7 +216,7 @@ namespace DataStructureProgram.OrderedList
         /// <summary>
         /// IsEmpty as function
         /// </summary>
-        /// <returns></returns>
+        /// <returns>return boolean</returns>
         public bool IsEmpty()
         {
             try
@@ -221,6 +237,9 @@ namespace DataStructureProgram.OrderedList
             }
         }
 
+        /// <summary>
+        /// Print function
+        /// </summary>
         public void Print()
         {
             try
@@ -245,11 +264,18 @@ namespace DataStructureProgram.OrderedList
             }
         }
 
+        /// <summary>
+        /// Size function
+        /// </summary>
+        /// <returns>return boolean</returns>
         public long Size()
         {
             return this.size;
         }
 
+        /// <summary>
+        /// Reposition function
+        /// </summary>
         public void Reposition()
         {
             try
@@ -268,6 +294,11 @@ namespace DataStructureProgram.OrderedList
             }
         }
 
+        /// <summary>
+        /// WriteFile function
+        /// </summary>
+        /// <param name="path">path as field</param>
+        /// <returns>returns boolean</returns>
         public bool WriteFile(string path)
         {
             try
@@ -289,6 +320,7 @@ namespace DataStructureProgram.OrderedList
                         }
                     }
                 }
+
                 return true;
             }
             catch (Exception ex)

@@ -15,30 +15,33 @@ namespace DataStructureProgram.BankingOperation
    public class BankTransaction
     {
         /// <summary>
-        /// DepositeAccountDetails as function
+        /// Deposit AccountDetails as function
         /// </summary>
         /// <param name="person">person as parameter</param>
-        public static void DepositeAccountDetails(Person person)
+        public static void DepositAccountDetails(Person person)
         {
             try
             {
                 bool booldepositeamount = true;
 
+                //// check condition true and false
                 while (booldepositeamount)
                 {
                     Console.WriteLine("Enter deposite amount" + " " + person.Balance + " " + "in your account");
                     string depositeamount = Console.ReadLine();
 
+                    //// call IsNumber function in Utility class
                     if (Utility.IsNumber(depositeamount) == false)
                     {
                         Console.WriteLine("Invalid deposite amount");
                         continue;
                     }
 
-                    if (person.Deposite(Convert.ToInt32(depositeamount)) == false)
+                    if (person.Deposit(Convert.ToInt32(depositeamount)) == false)
                     {
                         continue;
                     }
+
                     booldepositeamount = false;
                 }
             }
@@ -62,6 +65,7 @@ namespace DataStructureProgram.BankingOperation
                     Console.WriteLine("Enter withdraw amount" + " " + person.Balance + " " + "in your saving account");
                     string withdrawamount = Console.ReadLine();
 
+                    //// call IsNumber function in Utility class
                     if (Utility.IsNumber(withdrawamount) == false)
                     {
                         Console.WriteLine("Invalid input amount");
@@ -72,6 +76,7 @@ namespace DataStructureProgram.BankingOperation
                     {
                         continue;
                     }
+
                     boolwithdraw = false;
                 }
             }

@@ -23,12 +23,9 @@ namespace DataStructureProgram.OrderedList
             {
                 string path = string.Empty;
                 SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-
                 string dataFromFile = System.IO.File.ReadAllText("C:/Users/admin/source/repos/DataStructureProgram/DataStructureProgram/OrderedList.txt");
                 Console.WriteLine(dataFromFile);
-
                 string[] arraysplit = dataFromFile.Split(' ');
-
                 foreach (string word in arraysplit)
                 {
                     if (word.Trim() != string.Empty)
@@ -39,6 +36,8 @@ namespace DataStructureProgram.OrderedList
 
                 Console.WriteLine("Enter Element for search & remove in the list");
                 string number = Console.ReadLine();
+
+                //// call IsNumber function in Utility class
                 if (Utility.IsNumber(number) == false)
                 {
                     Console.WriteLine("Enter only NUmber");
@@ -47,7 +46,6 @@ namespace DataStructureProgram.OrderedList
 
                 int searchnumber = Convert.ToInt32(number);
                 Console.WriteLine("Entered NUmber" + searchnumber);
-                
                 if (singlyLinkedList.Search(number))
                 {
                     Console.WriteLine("remove number from the list" + "\t" + number);
