@@ -24,12 +24,18 @@ namespace DesignPatternPrograms
                 
                 do
                 {
-                    Console.WriteLine("1. Singletone designpattern Program");
+                    Console.WriteLine("1. Singletone designpattern program");
                     Console.WriteLine("2. Computer Factory Management");
                     Console.WriteLine("3. Prototype design pattern");
                     Console.WriteLine("4. Adapter design pattern");
+                    Console.WriteLine("5. Facade design pattern");
+                    Console.WriteLine("6. Proxy design pattern");
+                    Console.WriteLine("7. Observer design pattern");
+                    Console.WriteLine("8. Visitor design pattern");
+                    Console.WriteLine("9. Annotation program");
+                    Console.WriteLine("10. Dependency Injection program");
                     Console.WriteLine("Enter your choice");
-
+                
                     choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
                     {
@@ -45,6 +51,26 @@ namespace DesignPatternPrograms
                         case 4:
                             AdapterDesign.ShoppingClass.AdapterFunction();
                             break;
+                        case 5:
+                            FacadeDesign.MainClass mainClass = new FacadeDesign.MainClass();
+                            mainClass.MinFunction();
+                            break;
+                        case 6:
+                            ProxyDesign.ProxyClass proxyClass = new ProxyDesign.ProxyClass();
+                            proxyClass.ProxyFunction();
+                            break;
+                        case 7:
+                            ObserverDesign.ObserverClass.ObserverFunction();
+                            break;
+                        case 8:
+                            VisitorDesign.MainVisitorClass.VisitorFunction();
+                            break;
+                        case 9:
+                            Annotation.AnnotationClass.AnnotationFunction();
+                            break;
+                        case 10:
+                            DependencyInjection.DependencyClass.DependencyFunction();
+                            break;                            
                     }
                 }
                 while (choice != 0);

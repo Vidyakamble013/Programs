@@ -25,7 +25,7 @@ namespace DesignPatternPrograms.PrototypePattern
                 SoftwareDeveloper software = new SoftwareDeveloper();
                 software.EmployeeName = "Boby";
                 software.EmployeeId = "1";
-                software.preferredTechnology = "Fullstack";
+                software.PreferredTechnology = "Fullstack";
 
                 //// Again create Instance of an SoftwareDeveloperclass
                 SoftwareDeveloper developer = (SoftwareDeveloper)software.Clone();
@@ -39,7 +39,7 @@ namespace DesignPatternPrograms.PrototypePattern
                 Department department = new Department();
                 department.DeptName = "Testing";
                 department.DId = "T-01";
-                department.preferredTechnology = "Testing";
+                department.PreferredTechnology = "Testing";
                 department.WordsPerMinute = 100;
 
                 //// Again create Instance of an Department

@@ -77,12 +77,12 @@ namespace DesignPatternPrograms.PrototypePattern
     public class Department : IEmployee
     {
         /// <summary>
-        /// Gets or sets the identifier.
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
         /// </summary>
         public int WordsPerMinute { get; set; }
 
         /// <summary>
-        /// Gets or sets the identifier.
+        /// Gets or sets a value indicating whether SA1623 works with {para} tags.
         /// </summary>
         public string DeptName { get; set; }
 

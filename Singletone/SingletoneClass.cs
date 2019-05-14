@@ -14,21 +14,24 @@ namespace DesignPatternPrograms.Singletone
     /// </summary>
    public class SingleToneClass
     {
-       
-        /// <summary>
-        /// counter as parameter
-        /// </summary>
-        private static int counter = 0;
-
         /// <summary>
         /// create Instance of an SingleToneClass class
         /// </summary>
         private static SingleToneClass instance = null;
 
         /// <summary>
-        /// use Lazy collection as string type
+        /// counter as parameter
         /// </summary>
-        private static readonly Lazy<SingleToneClass> Instancelock = new Lazy<SingleToneClass>(() => new SingleToneClass());
+        private static int counter = 0;
+
+        /// <summary>
+        /// Prevents a default instance of the <see cref="SingleToneClass"/> class from being created.
+        /// </summary>
+        private SingleToneClass()
+        {
+            counter++;
+            Console.WriteLine("Counter value is increment by" + counter.ToString());
+        }
 
         /// <summary>
         /// Gets a value indicating whether the item is enabled.
@@ -43,13 +46,9 @@ namespace DesignPatternPrograms.Singletone
         }
 
         /// <summary>
-        /// Initializes static members of the SingleToneClass class.
+        /// use Lazy collection as string type
         /// </summary>
-        private SingleToneClass()
-        {
-            counter++;
-            Console.WriteLine("Counter value is increment by" + counter.ToString());
-        }
+        private static readonly Lazy<SingleToneClass> Instancelock = new Lazy<SingleToneClass>(() => new SingleToneClass());
 
         /// <summary>
         /// GetInstance as function
