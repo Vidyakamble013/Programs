@@ -27,7 +27,7 @@ namespace DesignPatternPrograms.Singletone
 
                 if (singletone1 == singletone2)
                 {
-                    Console.WriteLine("Here we implament the singletone design pattern");
+                    Console.WriteLine("Here we implement the singletone design pattern");
                 }
             }
             catch (Exception ex)

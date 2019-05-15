@@ -34,6 +34,7 @@ namespace DesignPatternPrograms
                     Console.WriteLine("8. Visitor design pattern");
                     Console.WriteLine("9. Annotation program");
                     Console.WriteLine("10. Dependency Injection program");
+                    Console.WriteLine("11. Reflection program");
                     Console.WriteLine("Enter your choice");
                 
                     choice = Convert.ToInt32(Console.ReadLine());
@@ -70,7 +71,10 @@ namespace DesignPatternPrograms
                             break;
                         case 10:
                             DependencyInjection.DependencyClass.DependencyFunction();
-                            break;                            
+                            break;
+                        case 11:
+                            Reflection.MainClass.ReflectionFunction();
+                            break;
                     }
                 }
                 while (choice != 0);

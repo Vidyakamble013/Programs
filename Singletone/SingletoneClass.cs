@@ -15,6 +15,11 @@ namespace DesignPatternPrograms.Singletone
    public class SingleToneClass
     {
         /// <summary>
+        /// use Lazy collection as string type
+        /// </summary>
+        private static readonly Lazy<SingleToneClass> Instancelock = new Lazy<SingleToneClass>(() => new SingleToneClass());
+        
+        /// <summary>
         /// create Instance of an SingleToneClass class
         /// </summary>
         private static SingleToneClass instance = null;
@@ -30,7 +35,7 @@ namespace DesignPatternPrograms.Singletone
         private SingleToneClass()
         {
             counter++;
-            Console.WriteLine("Counter value is increment by" + counter.ToString());
+            Console.WriteLine("Counter value is increment by " + counter.ToString());
         }
 
         /// <summary>
@@ -46,11 +51,6 @@ namespace DesignPatternPrograms.Singletone
         }
 
         /// <summary>
-        /// use Lazy collection as string type
-        /// </summary>
-        private static readonly Lazy<SingleToneClass> Instancelock = new Lazy<SingleToneClass>(() => new SingleToneClass());
-
-        /// <summary>
         /// GetInstance as function
         /// </summary>
         /// <returns>return string</returns>
@@ -64,6 +64,6 @@ namespace DesignPatternPrograms.Singletone
 
                 return instance;
             }
-        }
+        }  
     }
 }
