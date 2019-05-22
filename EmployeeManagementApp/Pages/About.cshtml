@@ -6,6 +6,7 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@Model.Message</h3>
 
+<div ng-controller="EmployeeController"></div>
 <table class="table">
     <thead class="thead-light">
         <tr>
@@ -18,32 +19,43 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr ng-repeat="item in EmployeeManagement">
             <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>Otto</td>            
-            <td>Otto</td>
-            <td>Otto</td>
-
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
+            <td>{{item.Firstname}}</td>
             <td>Otto</td>
             <td>Otto</td>
             <td>Otto</td>
-
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
             <td>Otto</td>
-            <td>Otto</td>
-            <td>Otto</td>
-
-        </tr>
+            <td><button class="btn btn-primary" ng-click="(item)">Edit</button></td>
+            <td><button class="btn btn-primary" ng-click="(item)">Delete</button></td>
+        </tr>        
     </tbody>
 </table>
+
+  <div>
+      <form>
+          <div>
+              <label>Firstname</label>
+              <input type="text" ng-model="Firstname" />
+          </div>
+          <div>
+              <label>Firstname</label>
+              <input type="text" ng-model="Lastname" />
+          </div>
+          <div>
+              <label>Firstname</label>
+              <input type="text" ng-model="City" />
+          </div>
+          <div>
+              <label>Firstname</label>
+              <input type="text" ng-model="Contact" />
+          </div>
+          <div>
+              <label>Firstname</label>
+              <input type="text" ng-model="Gender" />
+          </div>
+
+          <button class="btn btn-primary" ng-click="AddRecord()">Add</button>
+      </form>
+  </div>
+
